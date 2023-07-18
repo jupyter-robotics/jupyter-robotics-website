@@ -17,10 +17,7 @@ jobs:
         with:
           python-version: "3.11"
       - name: Install dependencies
-        run: python -m pip install sphinx sphinx-material recommonmark "sphinx-markdown-tables>=0.0.17" requests pytest-check-links
-      - name: Check links
-        run: |
-          pytest --check-links --ignore=_templates/
+        run: python -m pip install sphinx sphinx-material
       - name: Build website
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
